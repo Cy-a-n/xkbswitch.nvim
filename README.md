@@ -4,7 +4,7 @@
   </p>
 </div>
 
-## Changes in this fork
+## Changes in this fork of ivanesmantovich / xkbswitch.nvim 
 
 Previously, the plugin supported switching to English QWERTY keyboard layout only when leaving Insert mode and when Neovim regained focus, assuming the layout was English QWERTY before it lost focus. It only switched to the saved keyboard layout when entering Insert mode and when Neovim lost focus.
 
