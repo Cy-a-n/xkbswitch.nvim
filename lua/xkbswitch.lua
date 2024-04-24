@@ -1,7 +1,7 @@
 local M = {}
 
 -- Default parameters
-M.events_get_focus = {'FocusGained', 'CmdlineLeave'}
+M.events_get_focus = {'FocusGained'}
 
 -- nvim_create_autocmd shortcut
 local autocmd = vim.api.nvim_create_autocmd
