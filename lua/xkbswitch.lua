@@ -80,7 +80,7 @@ function M.setup(opts)
     -- 1. Save the current layout
     -- 2. Switch to the US layout
     autocmd(
-        {'InsertLeave', 'CmdlineLeave'},
+        {'InsertLeave', 'CmdlineLeave', 'VimEnter'},
         {
             pattern = "*",
             callback = function()
@@ -115,7 +115,7 @@ function M.setup(opts)
     -- When entering Insert or Command Line Mode:
     -- 1. Switch to the previously saved layout
     autocmd(
-        {'FocusLost', 'InsertEnter', 'CmdlineEnter'},
+        {'FocusLost', 'InsertEnter', 'CmdlineEnter', 'VimLeave'},
         {
             pattern = "*",
             callback = function()
