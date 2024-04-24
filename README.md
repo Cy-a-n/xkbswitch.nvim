@@ -4,6 +4,36 @@
   </p>
 </div>
 
+## Changes in this fork
+
+Previously, the plugin supported switching to English QWERTY keyboard layout only when leaving Insert mode and when Neovim regained focus, assuming the layout was English QWERTY before it lost focus. It only switched to the saved keyboard layout when entering Insert mode and when Neovim lost focus.
+
+In this fork, the following changes have been implemented:
+
+- Vim now switches the keyboard layout to English QWERTY when:
+  - Entering Neovim
+  - Leaving Insert mode
+  - Leaving Command Line mode
+  - Neovim regains focus (assuming the layout was English QWERTY before it lost focus)
+  
+- It saves the previously selected keyboard layout and applies it again when:
+  - Leaving Neovim
+  - Entering Insert mode
+  - Entering Command Line mode
+  - Neovim loses focus
+
+On another note, English QWERTY should be added as a keyboard layout for this plugin to work correctly. I have only tested this plugin on Linux/NixOS 23.11 with 
+```bash
+$ nvim --version
+NVIM v0.9.5
+Build type: Release
+LuaJIT 2.1.1693350652
+```
+from the unstable channel and both the xkb layouts `English (US)` and its variant `English (programmer Dvorak)` enabled,  
+so no guarantees.
+
+## Original README
+
 Do you have more than one keyboard layout and constantly switching back to English just to be able to move?\
 Stop it, get some help!\
 With **xkbswitch.nvim** you can write comments/notes/documents in your language of choice, press `Esc` to enter Normal mode and instantly be ready to make your next move.\
