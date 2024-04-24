@@ -76,11 +76,11 @@ function M.setup(opts)
         M.events_get_focus = opts.events_get_focus
     end
 
-    -- When leaving Insert Mode:
+    -- When leaving Insert Mode or Command-Line Mode:
     -- 1. Save the current layout
     -- 2. Switch to the US layout
     autocmd(
-        'InsertLeave',
+        {'InsertLeave', 'CmdlineLeave'},
         {
             pattern = "*",
             callback = function()
@@ -115,7 +115,7 @@ function M.setup(opts)
     -- When entering Insert Mode:
     -- 1. Switch to the previously saved layout
     autocmd(
-        {'FocusLost', 'InsertEnter'},
+        {'FocusLost', 'InsertEnter', 'CmdlineEnter'},
         {
             pattern = "*",
             callback = function()
