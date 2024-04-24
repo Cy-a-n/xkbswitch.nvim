@@ -112,7 +112,7 @@ function M.setup(opts)
     )
 
     -- When Neovim loses focus
-    -- When entering Insert Mode:
+    -- When entering Insert or Command Line Mode:
     -- 1. Switch to the previously saved layout
     autocmd(
         {'FocusLost', 'InsertEnter', 'CmdlineEnter'},
